@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label id="mylabel" style="display: block;">0</label>
+    <button id="butt1">increse</button>
+    <button id="butt2">reset</button>
+    <button id="butt3">decrese</button>
+    <button id="pri">To print this page</button>
+    <script>
+        s1="venkat ramanan"
+        console.log(s1.slice(0,6));
+        console.log(s1.indexOf("a"));
+        console.log(s1.replaceAll("e","o"));
+
+        let level=0;
+        document.getElementById("butt1").onclick=function(){
+            level +=1;
+            document.getElementById("mylabel").innerHTML=level;
+        }
+        document.getElementById("butt2").onclick=function(){
+            level = 0;
+            document.getElementById("mylabel").innerHTML=level;
+        }
+        document.getElementById("butt3").onclick=function(){
+            level -=1;
+            document.getElementById("mylabel").innerHTML=level;
+        }
+        document.getElementById("pri").onclick=function(){
+            window.print();
+        }
+    </script>
+</body>
+</html>

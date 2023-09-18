@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="display: block;">INDIAN VOTE ELIGIBILITY</h1>
+    <input type="text" placeholder="enter your age" id="myvote">
+    <button id="mybutton">Enter</button>
+    <p id="myans"></p>
+    <script>
+        let h1= "venkat ramanan vr";
+        let sp=(h1.split(" "));       //important factor to join space between words//
+        console.log(sp[0]+sp[1]+sp[2]);
+        fr="vampire";
+        console.log(fr.split);
+        document.getElementById("mybutton").onclick=function(){
+            let age=Number(document.getElementById("myvote").value);
+            if(age>=18){
+                document.getElementById("myans").innerHTML="You are eligible for voting";
+            }
+            else{
+                document.getElementById("myans").innerHTML="You are not eligible for voting";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label id="genn1" style="display: block;">1</label>
+    <label id="genn2" style="display: block;">2</label>
+    <label id="genn3" style="display: block;">3</label>
+    <button id="gen">generate</button>
+    <script>
+        let x;
+        let y;
+        let z;
+        document.getElementById("gen").onclick=function(){
+            x = Math.floor(Math.random()*6)+1;
+            y = Math.floor(Math.random()*6)+1;
+            z = Math.floor(Math.random()*6)+1;
+            document.getElementById("genn1").innerHTML=x;
+            document.getElementById("genn2").innerHTML=y;
+            document.getElementById("genn3").innerHTML=z;
+        }
+    </script>
+</body>
+</html>

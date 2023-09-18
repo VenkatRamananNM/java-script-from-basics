@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="mycheckbutton" style="display: block;display: inline-block;">Subscribe</label>
+    <input type="checkbox" id="mycheckbutton" style="display: inline-block;">
+    <button style="display: block; margin-top: 15px;" id="mybutton">check here</button>
+    <input type="radio" id="myradio1">
+    <label for="myradio1">visa</label>
+    <input type="radio" id="myradio2">
+    <label for="myradio2">MasterCard</label>
+    <input type="radio" id="myradio3">
+    <label for="myradio3">paypall</label>
+    <script>
+        document.getElementById("mybutton").onclick=function(){
+            if(document.getElementById("mycheckbutton").checked){
+                console.log("you are a subscriber");
+            }
+            else{
+                console.log("you are not a subscriber");
+            }
+             if(document.getElementById("myradio1").checked){
+                console.log("you are a visa user");
+            }
+            else if(document.getElementById("myradio2").checked){
+                console.log("you are a mastercard user");
+            }
+            else if(document.getElementById("myradio3").checked){
+                console.log("you are a paypall user");
+            }
+            else{
+                console.log("select a payment method");
+            }
+        }
+    </script>
+</body>
+</html>

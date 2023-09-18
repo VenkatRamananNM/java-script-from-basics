@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>welcome to the acedemy</p>
+        <p id="one" style="display: none;">hello venkat ramanan</p>
+        <button id="two">click here</button>
+    </div>
+    <div>
+        <h1>Welcome Venkat Ramanan</h1>
+        <p id="mypara">A Paragraph</p>
+        <button id="mybutton">click here</button>
+    </div>
+    <script>
+       // let a1="venkat";
+       // console.log(a1);
+       // s1=a1.slice(1,6);
+       // console.log(s1);
+        //f1=a1.charAt(0).toUpperCase(a1);  //<<<<< this is called as method chaining....having one function next to other function!//
+        //console.log(f1);
+       // console.log(f1+s1);
+
+        document.getElementById("two").onclick=function(){
+            document.getElementById("one").style.display='block';
+        }
+        document.getElementById("mybutton").onclick=function(){
+            let van= "Paragraph changed";
+            document.getElementById("mypara").innerHTML=van;
+        }
+    </script>
+</body>
+</html>
