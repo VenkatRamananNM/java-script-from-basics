@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <hl>Students marks section</hl><br><br>
+    <label for="myinput">Enter your marks:</label>
+    <input type="text" id="myinput" placeholder="enter your marks">
+    <button id="mybutton">Enter</button>
+
+    <script>
+        let marks;
+        document.getElementById("mybutton").onclick = function () {
+            let marks=parseInt(document.getElementById("myinput").value);
+        
+            switch (true) {
+                case marks == 100:
+                    console.log("you got full marks,congrats");
+                    break;
+                case marks >=90:
+                    console.log("you got A grade");
+                    break;
+                case marks >=80:
+                    console.log("you got B grade");
+                    break;
+                case marks >=70:
+                    console.log("you got c grade");
+                    break;
+                case marks >=60:
+                    console.log("you got D grade");
+                    break;
+                default:
+                    console.log("you failed");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
