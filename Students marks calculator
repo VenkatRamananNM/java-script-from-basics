@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button1{
+            width: 100px;
+            height: 30px;
+            background-color: red;
+            margin-top: 10px;
+            border-radius: 15px;
+            border: none;
+            font-size: 16px;
+            color: white;
+            box-shadow: 1px 1px 5px black;
+            transition: 0.15s;
+        }
+        .button1:hover{
+            transform: scale(1.1);
+        }
+        .rows{
+            background-color:lightgreen;
+        }
+        .rows1{
+            background-color:rgb(218, 232, 218);
+        }
+        .inp1{
+            border: none;
+            background-color: rgb(218, 232, 218);;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 16.5px;">ABC SCHOOLS - 2023 ANNUAL RESULTS</h1>
+    <table border="1">
+        <tr class="rows">
+            <th>SUBJECT</th>
+            <th>ENTER MARKS HERE</th>
+            <th>RESULT</th>
+        </tr>
+        <tr class="rows1">
+            <td>TAMIL</td>
+            <td ><input id="mytamil" type="number" class="inp1"></td>
+            <td id="tamres" style="width: 70px;"></td>
+        </tr>
+        <tr class="rows1">
+            <td>ENGLISH</td>
+            <td><input id="myenglish" type="number" class="inp1"></td>
+            <td id="engres"></td>
+        </tr>
+        <tr class="rows1">
+            <td>MATHS</td>
+            <td><input id="mymaths" type="number" class="inp1"></td>
+            <td id="matres"></td>
+        </tr>
+        <tr class="rows1">
+            <td>SCIENCS</td>
+            <td><input id="myscience" type="number" class="inp1"></td>
+            <td id="scires"></td>
+        </tr>
+        <tr class="rows1">
+            <td>SOCIAL</td>
+            <td><input id="mysocial" type="number" class="inp1"></td>
+            <td id="socres"></td>
+        </tr>
+        <table border="1">
+            <tr class="rows1">
+                <td>TOTAL</td>
+                <td colspan="2"><div id="mytotal" style="width: 242px; height: 21px;"></div></td>
+            </tr>
+            <tr class="rows1">
+                <td>AVERAGE</td>
+                <td colspan="2"><div id="myaverage" style="width: 242px; height: 21px;"></div></td>
+            </tr>
+        </table>
+        <button id="mybutton" class="button1">Print result</button>
+        <p id="mypara"></p>
+    </table>
+    <script>
+        document.getElementById("mybutton").onclick = function () {
+            let A = Number(document.getElementById("mytamil").value);
+            let B = Number(document.getElementById("myenglish").value);
+            let C = Number(document.getElementById("mymaths").value);
+            let D = Number(document.getElementById("myscience").value);
+            let E = Number(document.getElementById("mysocial").value);
+    
+            let tot =Number(A + B + C + D + E);
+            console.log(tot);
+            document.getElementById("mytotal").innerHTML = tot;
+    
+            let avg = Number(tot / 5);
+            console.log(avg);
+            document.getElementById("myaverage").innerHTML = avg;
+
+            if (A < 35) {
+                document.getElementById("tamres").innerHTML = "<span style='color: red;'>Failed</span>";
+            } else {
+                document.getElementById("tamres").innerHTML = "Pass";
+            }
+            if (B < 35) {
+                document.getElementById("engres").innerHTML = "<span style='color: red;'>Failed</span>";
+            } else {
+                document.getElementById("engres").innerHTML = "Pass";
+            }
+            if (C < 35) {
+                document.getElementById("matres").innerHTML = "<span style='color: red;'>Failed</span>";
+            } else {
+                document.getElementById("matres").innerHTML = "Pass";
+            }
+            if (D < 35) {
+                document.getElementById("scires").innerHTML = "<span style='color: red;'>Failed</span>";
+            } else {
+                document.getElementById("scires").innerHTML = "Pass";
+            }
+            if (E < 35) {
+                document.getElementById("socres").innerHTML = "<span style='color: red;'>Failed</span>";
+            } else {
+                document.getElementById("socres").innerHTML = "Pass";
+            }
+            
+            if(A>=35 && B>=35 && C>=35 && D>=35 && E>=35){
+                document.getElementById("mypara").innerHTML="You have passed your exams, congratulations!"
+            }
+            else{
+                document.getElementById("mypara").innerHTML="<span style='color: red;'>You have so reappear for the annual exam! </span>"
+            }
+        }
+    </script>
+    
+</body>
+</html>
