@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .prime-div{
+            width: 400px;
+            height: 500px;
+            border:4px solid rgb(246, 112, 112);
+            margin-left: 550px;
+            margin-top: 100px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: #F0F0F0;
+        }
+
+        /* // sub divs // */
+        
+        .sub-div1{
+            width: 400px;
+            height: 100px;
+        }
+        .sub-div2{
+            width: 400px;
+            height: 100px;
+        }
+        .sub-div3{
+            width: 400px;
+            height: 100px;
+        }
+        .sub-div4{
+            width: 400px;
+            height: 100px;
+        }
+
+        /* input and words-1 */
+
+        .my-name1{
+            width: 360px;
+            height: 40px;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+            outline: none;
+            font-size: 16px;
+            padding-left: 10px;
+            margin-left: 13px;
+            margin-top: 10px;
+            border-radius: 15px;
+            margin-top: 20px;
+
+        }
+        .my-txt1{
+            margin-left: 18px;
+            font-size: 18px;
+        }
+
+        /* input and words -2 */
+
+        .my-name2{
+            width: 360px;
+            height: 40px;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+            outline: none;
+            font-size: 16px;
+            padding-left: 10px;
+            margin-left: 13px;
+            margin-top: 10px;
+            border-radius: 15px;
+
+        }
+        .my-txt2{
+            margin-left: 18px;
+            font-size: 18px;
+        }
+
+        /* input and words -3 */
+ 
+        .my-name3{
+            width: 360px;
+            height: 40px;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+            outline: none;
+            font-size: 16px;
+            padding-left: 10px;
+            margin-left: 13px;
+            margin-top: 10px;
+            border-radius: 15px;
+
+        }
+        .my-txt3{
+            margin-left: 18px;
+            font-size: 18px;
+        }
+
+        /* input and words -4 */
+
+        .my-name4{
+            width: 300px;
+            height: 40px;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+            outline: none;
+            font-size: 16px;
+            padding-left: 10px;
+            border-radius: 15px;
+            margin-left: 18px;
+
+        }
+        .my-txt4{
+            font-size: 18px;
+            margin-left: 18px;
+        }
+        .eyebtn{
+            width: 40px;
+            height: 43px;
+            border: none;
+            margin-left:15px ;
+        }
+
+        /* button-css */
+
+        .mybtn{
+            width: 150px;
+            height: 40px;
+            font-size: 18px;
+            margin-left: 127px;
+            border-radius: 20px;
+            border: none;
+            background-color: red;
+            color: white;
+            box-shadow: 1px 1px 5px black ;
+            transition: 0.15s;
+            margin-bottom: 10px;
+        }
+        .mybtn:hover{
+            opacity: 0.7;
+        }
+        .mybtn:active{
+            opacity: 0.10;
+        }
+        .eye{
+            padding-top: 5px;
+            transition: 0.15s;
+        }
+        .eye:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="prime-div" id="myprimediv">
+        <div class="sub-div1">
+            <input type="text" class="my-name1" id="my-name-input1" placeholder="Enter your name">
+            <p class="my-txt1" id="result1"></p>
+        </div>
+        <div class="sub-div2">
+            <input type="number" class="my-name2" id="my-name-input2" placeholder="Enter your mobile number">
+            <p class="my-txt2" id="result2"></p>
+        </div>
+        <div class="sub-div3">
+            <input type="email" class="my-name3" id="my-name-input3" placeholder="Enter your Email ID">
+            <p class="my-txt3" id="result3"></p>
+        </div>
+        <div class="sub-div4" style="display:grid; grid-template-columns: 2fr 1fr;">
+            <input type="password" class="my-name4" id="my-name-input4" placeholder="Enter your Passcode">
+            <button class="eyebtn" id="eyebutton"><img class="eye" src="C:\Users\Venkat Ramanan\Downloads\eye-solid.svg"></button>
+            <p class="my-txt4" id="result4" style="margin-top: 5px;"></p>
+        </div>
+        <button class="mybtn" id="mybtn1">Click Here</button>
+    </div>
+    <script>
+        mobileRegex=/^[6-9]\d{9}$/
+        emailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+        passcodeRegex=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$/
+        document.getElementById("mybtn1").onclick=function(){
+              let namee = document.getElementById("my-name-input1").value
+              const numberr = document.getElementById("my-name-input2").value
+              const emaill= document.getElementById("my-name-input3").value
+              const passcodee=document.getElementById("my-name-input4").value
+              if(namee==""){
+                document.getElementById("result1").innerHTML='<span style="color:red; font-size:18px";>*please enter your name section</span>'
+              }
+              else if(!isNaN(namee)){
+                document.getElementById("result1").innerHTML='<span style="color:red; font-size:18px";>*numbers are not allowed here</span>'
+              }
+              else{
+                document.getElementById("result1").innerHTML=""
+              }
+
+              if(numberr==""){
+                document.getElementById("result2").innerHTML='<span style="color:red; font-size:18px";>*please enter your mobile number</span>'
+              }
+              else if(!mobileRegex.test(numberr)){
+                document.getElementById("result2").innerHTML='<span style="color:red; font-size:18px";>*the number you have entred is invalid</span>'
+              }
+              else{
+                document.getElementById("result2").innerHTML=""
+              }
+              if(emaill==""){
+                document.getElementById("result3").innerHTML='<span style="color:red; font-size:18px";>*please enter your Email address</span>'
+              }
+              else if(!emailRegex.test(emaill)){
+                document.getElementById("result3").innerHTML='<span style="color:red; font-size:18px";>*the Email you have entred is invaild</span>'
+              }
+              else{
+                document.getElementById("result3").innerHTML=""
+              }
+              if(passcodee==""){
+                document.getElementById("result4").innerHTML='<span style="color:red; font-size:18px";>*please enter your Passcode</span>'
+              }
+              else if(!passcodeRegex.test(passcodee)){
+                document.getElementById("result4").innerHTML='<span style="color:red; width:300px; font-size:14px";>*the Passcode contain At least one uppercase letter, one lowercase letter,one digit, Minimum 8 characters.</span>'
+              }
+              else{
+                document.getElementById("result4").innerHTML=""
+              }
+             }
+             document.getElementById("eyebutton").onclick = function () {
+                let passwordInput = document.getElementById("my-name-input4");
+                if (passwordInput.type == "password") {
+                    passwordInput.type = "text";
+                } else {
+                    passwordInput.type = "password";
+                }
+            };
+    </script>
+</body>
+</html>>
