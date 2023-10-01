@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* outer section */
+        .mydiv{
+            width: 500px;
+            height: 600px;
+            display: grid;
+            grid-template-rows: 1fr 1fr 2fr;
+            border: 4px solid  rgb(218, 83, 83);
+            margin-left: 430px;
+            margin-top: 30px;
+            background-color:#F0F0F0 ;
+        }
+        .sub1{
+            position: relative;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+        .sub2{
+            background-color: rgb(218, 83, 83);
+            position: relative;
+            display: flex;
+        }
+        .sub3{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        /* buttons */
+        .sq{
+            width: 110px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 20px;
+            border: none;
+            background-color: rgb(218, 83, 83);
+            box-shadow: 1px 1px 5px black;
+            color: white;
+            transition: 0.15s;
+        }
+        .sq:hover{
+            transform: scale(1.1);
+        }
+        .cir{
+            width: 100px;
+            height: 40px;
+            font-size: 20px;  
+            border-radius: 20px;
+            border: none;
+            background-color:  rgb(218, 83, 83);
+            box-shadow: 1px 1px 5px black;
+            color: white;
+            transition: 0.15s;
+        }
+        .cir:hover{
+            transform: scale(1.1);
+        }
+        .rec{
+            width: 150px;
+            height: 40px;
+            font-size: 20px;  
+            border-radius: 20px;
+            border: none;
+            background-color:  rgb(218, 83, 83);
+            box-shadow: 1px 1px 5px black;
+            color: white;
+            transition: 0.15s;
+        }
+        .rec:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="mydiv">
+        <div class="sub1">
+            <button class="sq" id="mysquare">Square</button>
+            <button class="cir" id="mycircle">Circle</button>
+            <button class="rec" id="myrectangle">Rectangle</button>
+        </div>
+        <div class="sub2" id="subdiv1"></div>
+        <div class="sub3" id="subdiv2"></div>
+    </div>
+    <script>
+        document.getElementById("mysquare").onclick = function() {
+            let vamp = document.getElementById("subdiv1");
+            let vamppe = document.createElement("input");
+            let vampbutton = document.createElement("button");
+            let buttonText = document.createTextNode("Create");
+            document.getElementById("mysquare").onclick = ""
+            document.getElementById("mycircle").onclick = ""
+            document.getElementById("myrectangle").onclick = ""
+
+            vamppe.type = "number";
+            vampbutton.appendChild(buttonText);
+            vamp.appendChild(vamppe);
+            vamp.appendChild(vampbutton);
+
+            // Styling
+            vamppe.style.display = "block";
+            vamppe.style.width = "200px";
+            vamppe.style.height = "30px";
+            vamppe.style.borderRadius = "15px";
+            vamppe.style.border = "none";
+            vamppe.style.boxShadow = "1px 1px 5px black";
+            vamppe.style.marginLeft = "140px";
+            vamppe.style.marginTop = "58px";
+            vamppe.style.outline = "none";
+            vamppe.style.fontSize = "18px";
+
+            vampbutton.style.width = "60px";
+            vampbutton.style.height = "32px";
+            vampbutton.style.borderRadius = "15px";
+            vampbutton.style.border = "2px solid rgb(218, 83, 83)";
+            vampbutton.style.boxShadow = "1px 1px 5px black";
+            vampbutton.style.position = "absolute";
+            vampbutton.style.right = "80px";
+            vampbutton.style.bottom = "62px";
+            vampbutton.style.color = "rgb(218, 83, 83)";
+            vampbutton.style.backgroundColor = "white";
+            vampbutton.style.cursor = "pointer";
+
+            // Click event for value button
+            vampbutton.onclick = function() {
+                document.getElementById("vamppe");
+                vampbutton.onclick = ""
+
+                if (vamppe.value == "") {
+                    let sqq1 = document.getElementById("subdiv2");
+                    let sqq = document.createElement("div");
+                    sqq.innerHTML = "*please enter the value for the square!"; 
+                    sqq1.appendChild(sqq);
+                    sqq.style.fontSize="20px";
+                    sqq.style.position='absolute';
+                }
+                else if(vamppe.value >270){
+                    let sqq2 = document.getElementById("subdiv2");
+                    let sqqq = document.createElement("div");
+                    sqqq.innerHTML = "*The values are accepted up to 270 pixels only!"; 
+                    sqq2.appendChild(sqqq);
+                    sqqq.style.fontSize="20px";
+                    sqqq.style.position='absolute';
+                }
+                else{
+                    let vamp = document.getElementById("subdiv2");
+                    let createsq=document.createElement("div");
+                    vamp.appendChild(createsq);
+                    createsq.style.width=(vamppe.value)+"px";
+                    createsq.style.height=(vamppe.value)+"px";
+                    createsq.style.backgroundColor=" rgb(218, 83, 83)";
+                    createsq.style.position="absolute";
+                    createsq.style.boxShadow="1px 1px 5px black";
+                }
+            }
+        }
+
+        // CIRCLE FUNCTION //
+
+        document.getElementById("mycircle").onclick=function(){
+            let new1 = document.getElementById("subdiv1");
+            let cir1=document.createElement("input");
+            let cirholder=document.createElement("p");
+            let vampbutton1=document.createElement("button");
+            let vampbtntxt=document.createElement("p");
+            vampbtntxt.innerHTML="create";
+            cir1.type="number";
+            vampbutton1.appendChild(vampbtntxt);
+            new1.appendChild(cir1);
+            new1.appendChild(cirholder);
+            new1.appendChild(vampbutton1);
+            document.getElementById("mysquare").onclick = "";
+            document.getElementById("mycircle").onclick="";
+            document.getElementById("myrectangle").onclick = "";
+
+            // Styling
+            cir1.style.display = "block";
+            cir1.style.width = "200px";
+            cir1.style.height = "30px";
+            cir1.style.borderRadius = "15px";
+            cir1.style.border = "none";
+            cir1.style.boxShadow = "1px 1px 5px black";
+            cir1.style.marginLeft = "140px";
+            cir1.style.marginTop = "58px";
+            cir1.style.outline = "none";
+            cir1.style.fontSize = "18px";
+
+            vampbutton1.style.width = "60px";
+            vampbutton1.style.height = "32px";
+            vampbutton1.style.borderRadius = "15px";
+            vampbutton1.style.border = "2px solid rgb(218, 83, 83)";
+            vampbutton1.style.boxShadow = "1px 1px 5px black";
+            vampbutton1.style.position = "absolute";
+            vampbutton1.style.right = "80px";
+            vampbutton1.style.bottom = "62px";
+            vampbutton1.style.color = "rgb(218, 83, 83)";
+            vampbutton1.style.backgroundColor = "white";
+            vampbutton1.style.cursor = "pointer";
+            vampbutton1.style.display="relative";
+            vampbutton1.style.justifyContent="centre";
+            vampbutton1.style.alignItems="centre";
+
+            vampbtntxt.style.fontSize="16px";
+            vampbtntxt.style.display="absolute";
+            vampbtntxt.style.marginTop="4px";
+            vampbtntxt.style.marginLeft="2px";
+
+            vampbutton1.onclick=function(){
+                document.getElementById("cir1");
+                if(cir1.value == "") {
+                    let sqq1 = document.getElementById("subdiv2");
+                    let sqq = document.createElement("div");
+                    sqq.innerHTML = "*please enter the radius of the circle!"; 
+                    sqq1.appendChild(sqq);
+                    sqq.style.fontSize="20px";
+                    sqq.style.position='absolute';
+                }
+                else if(cir1.value >270){
+                    let sqq2 = document.getElementById("subdiv2");
+                    let sqqq = document.createElement("div");
+                    sqqq.innerHTML = "*The values are accepted up to 270 pixels only!"; 
+                    sqq2.appendChild(sqqq);
+                    sqqq.style.fontSize="20px";
+                    sqqq.style.position='absolute';
+                }
+                else{
+                    let vamp = document.getElementById("subdiv2");
+                    let createsq=document.createElement("div");
+                    vamp.appendChild(createsq);
+                    createsq.style.width=(cir1.value)+"px";
+                    createsq.style.height=(cir1.value)+"px";
+                    createsq.style.borderRadius="170px";
+                    createsq.style.backgroundColor=" rgb(218, 83, 83)";
+                    createsq.style.position="absolute";
+                    createsq.style.boxShadow="1px 1px 5px black";
+                }
+            }
+        }
+
+        // RECTANGLE FUNCTION //
+
+        document.getElementById("myrectangle").onclick = function(){   
+            let headdiv = document.getElementById("subdiv1");
+            let subdiv = document.createElement("div");
+            let recinp=document.createElement("input");
+            let recinp2=document.createElement("input");
+            let recbut=document.createElement("button");
+            let buttonText = document.createTextNode("Create");
+            document.getElementById("myrectangle").onclick = ""
+            document.getElementById("mycircle").onclick=""
+            document.getElementById("mysquare").onclick = ""
+
+            recinp.type = "number";
+            recinp2.type = "number";
+            recbut.appendChild(buttonText);
+            subdiv.appendChild(recinp);
+            subdiv.appendChild(recinp2);
+            subdiv.appendChild(recbut);
+            headdiv.appendChild(subdiv);
+
+            // Styling
+            recinp.style.display = "block";
+            recinp.style.width = "200px";
+            recinp.style.height = "30px";
+            recinp.style.borderRadius = "15px";
+            recinp.style.border = "none";
+            recinp.style.boxShadow = "1px 1px 5px black";
+            recinp.style.marginLeft = "140px";
+            recinp.style.marginTop = "58px";
+            recinp.style.outline = "none";
+            recinp.style.fontSize = "18px";
+
+            recinp2.style.display = "block";
+            recinp2.style.width = "200px";
+            recinp2.style.height = "30px";
+            recinp2.style.borderRadius = "15px";
+            recinp2.style.border = "none";
+            recinp2.style.boxShadow = "1px 1px 5px black";
+            recinp2.style.marginLeft = "140px";
+            recinp2.style.marginTop = "10px";
+            recinp2.style.outline = "none";
+            recinp2.style.fontSize = "18px";
+
+            recbut.style.width = "60px";
+            recbut.style.height = "32px";
+            recbut.style.borderRadius = "15px";
+            recbut.style.border = "2px solid rgb(218, 83, 83)";
+            recbut.style.boxShadow = "1px 1px 5px black";
+            recbut.style.position = "absolute";
+            recbut.style.right = "80px";
+            recbut.style.bottom = "62px";
+            recbut.style.color = "rgb(218, 83, 83)";
+            recbut.style.backgroundColor = "white";
+            recbut.style.cursor = "pointer";
+
+            recbut.onclick = function() {
+                let rec1Value = recinp.value;
+                let rec2Value = recinp2.value;
+
+                if (rec1Value == "" || rec2Value == "") {
+                    let sqq1 = document.getElementById("subdiv2");
+                    let sqq = document.createElement("div");
+                    sqq.innerHTML = "*please enter both values for the rectangle!"; 
+                    sqq1.appendChild(sqq);
+                    sqq.style.fontSize="20px";
+                    sqq.style.position='absolute';
+                }
+                else if(rec1Value == rec2Value){
+                    let sqq2 = document.getElementById("subdiv2");
+                    let sqqq = document.createElement("div");
+                    sqqq.innerHTML = "*The values must not be similar in order to make a rectangle!"; 
+                    sqq2.appendChild(sqqq);
+                    sqqq.style.fontSize="20px";
+                    sqqq.style.position='absolute';
+                }
+                else if(rec1Value > 270 || rec2Value > 270) {
+                    let sqq2 = document.getElementById("subdiv2");
+                    let sqqq = document.createElement("div");
+                    sqqq.innerHTML = "*The values are accepted up to 270 pixels only!"; 
+                    sqq2.appendChild(sqqq);
+                    sqqq.style.fontSize="20px";
+                    sqqq.style.position='absolute';
+                }
+                else{
+                    let vamp1 = document.getElementById("subdiv2");
+                    let createsqe=document.createElement("div");
+                    vamp1.appendChild(createsqe);
+                    createsqe.style.width=rec1Value+"px";
+                    createsqe.style.height=rec2Value+"px";
+                    createsqe.style.backgroundColor=" rgb(218, 83, 83)";
+                    createsqe.style.position="absolute";
+                    createsqe.style.boxShadow="1px 1px 5px black";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
