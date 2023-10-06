@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .prime-div{
+            width: 350px;
+            height: 500px;
+            background-color: #F0F0F0;
+            margin-left: 600px;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 1px 1px 5px black;
+        }
+        .sub-div1{
+            background-color:rgb(218, 83, 83);
+            width: 350px;
+            height: 100px;
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 1px 1px 5px black;
+        }
+        .myinp{
+            width: 270px;
+            height: 45px;
+            border: none;
+            outline: none;
+            box-shadow: 1px 1px 5px black;
+            font-size: 18px;
+            padding-left: 15px;
+            border-radius: 25px;
+        }
+        .sub-div2{
+            position: absolute;
+            width: 340px;
+            height: 350px;
+            margin-top: 130px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+            margin-left: 6px;
+            background-color: #F0F0F0;
+        }
+        .mybuttons{
+            width: 60px;
+            height: 50px;
+            font-size: 20px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+        }
+        .mybuttons1{
+            width: 60px;
+            height: 50px;
+            font-size: 20px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 1px 1px 5px black;
+        }
+        .backspace-img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(116, 110, 110);">
+    <div class="prime-div">
+        <div class="sub-div1"><input id="myinput" class="myinp" placeholder="enter the value"></div>
+        <div class="sub-div2">
+            <button class="mybuttons" id="mybutton7">7</button>
+            <button class="mybuttons" id="mybutton8">8</button>
+            <button class="mybuttons" id="mybutton9">9</button>
+            <button class="mybuttons" id="mybutton+">+</button>
+            <button class="mybuttons" id="mybutton6">6</button>
+            <button class="mybuttons" id="mybutton5">5</button>
+            <button class="mybuttons" id="mybutton4">4</button>
+            <button class="mybuttons" id="mybutton-">-</button>
+            <button class="mybuttons" id="mybutton1">1</button>
+            <button class="mybuttons" id="mybutton2">2</button>
+            <button class="mybuttons" id="mybutton3">3</button>
+            <button class="mybuttons" id="mybutton*" style="padding-top: 2px;">×</button>
+            <button class="mybuttons" id="mybutton-pi">π</button>
+            <button class="mybuttons" id="mybutton0">0</button>
+            <button class="mybuttons" id="mybutton-dot">.</button>
+            <button class="mybuttons" id="mybutton/">/</button>
+            <button class="mybuttons" style="background-color: rgb(218, 83, 83) ;color: white;" id="result-button">=</button>
+            <button class="mybuttons" style="background-color: rgb(218, 83, 83) ;color: white;" id="erase-button">CE</button>
+            <button class="mybuttons1" id="mybutton-backspace"><img src="C:\Users\Venkat Ramanan\Downloads\backspace.png" class="backspace-img"></button>
+        </div>
+    </div>
+    <script>
+        let alpharegex=/[a-zA-Z]/
+
+        document.getElementById("mybutton7").onclick = function(){
+            document.getElementById("myinput").value +=7
+        }
+        document.getElementById("mybutton8").onclick = function(){
+            document.getElementById("myinput").value +=8
+        }
+        document.getElementById("mybutton9").onclick = function(){
+            document.getElementById("myinput").value +=9
+        }
+        document.getElementById("mybutton+").onclick = function(){
+            document.getElementById("myinput").value += "+"
+        }
+        document.getElementById("mybutton6").onclick = function(){
+            document.getElementById("myinput").value +=6
+        }
+        document.getElementById("mybutton5").onclick = function(){
+            document.getElementById("myinput").value +=5
+        }
+        document.getElementById("mybutton4").onclick = function(){
+            document.getElementById("myinput").value +=4
+        }
+        document.getElementById("mybutton-").onclick = function(){
+            document.getElementById("myinput").value += "-"
+        }
+        document.getElementById("mybutton1").onclick = function(){
+            document.getElementById("myinput").value +=1
+        }
+        document.getElementById("mybutton2").onclick = function(){
+            document.getElementById("myinput").value +=2
+        }
+        document.getElementById("mybutton3").onclick = function(){
+            document.getElementById("myinput").value +=3
+        }
+        document.getElementById("mybutton*").onclick = function(){
+            document.getElementById("myinput").value += "*"
+        }
+        document.getElementById("mybutton-pi").onclick = function(){
+            document.getElementById("myinput").value +=3.14
+        }
+        document.getElementById("mybutton0").onclick = function(){
+            document.getElementById("myinput").value +=0
+        }
+        document.getElementById("mybutton-dot").onclick = function(){
+            document.getElementById("myinput").value +="."
+        }
+        document.getElementById("mybutton/").onclick = function(){
+            document.getElementById("myinput").value +="/"
+        }
+
+        // PROCESSING INPUT
+
+        document.getElementById("result-button").onclick = function() {
+        let inputValue = document.getElementById("myinput").value;
+        if(isNaN(inputValue)){
+        document.getElementById("myinput").value = "invalid! "
+        }
+        let result = eval(inputValue);
+        document.getElementById("myinput").value = result;
+        }
+
+       // ERASE THE INPUT COLUMN FUNCTION
+
+        document.getElementById("erase-button").onclick=function(){
+        document.getElementById("myinput").value = ' '
+       }
+
+       //    BACKSPACE FUNCTION
+
+        document.getElementById("mybutton-backspace").onclick = function() {
+        let arr = document.getElementById("myinput").value.split("");  
+        let ans = arr.pop();  
+        document.getElementById("myinput").value = arr.join(""); 
+}
+
+    </script>
+</body>
+</html>
